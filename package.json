@@ -1,0 +1,38 @@
+{
+  "name": "heregeom2geojson",
+  "version": "0.1.0-SNAPSHOT",
+  "description": "JavaScript library to covert HERE geometries to GeoJSON",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint src & npm run test-bundle",
+    "test": "mocha test/test-bundle.js",
+    "test-bundle": "browserify test/test.js -g [ babelify --plugins [ transform-es2015-modules-commonjs ] ] > test/test-bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrismayer/heregeom2geojson.git"
+  },
+  "keywords": [
+    "HERE",
+    "geometry",
+    "GeoJSON",
+    "converter"
+  ],
+  "author": "Christian Mayer <chris@meggsimum.de> (https://meggsimum.de)",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/chrismayer/heregeom2geojson/issues"
+  },
+  "homepage": "https://github.com/chrismayer/heregeom2geojson#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
+    "browserify": "^14.1.0",
+    "eslint": "^3.15.0",
+    "expect": "^1.20.2",
+    "mocha": "^3.2.0",
+    "should": "^11.2.0"
+  }
+}
