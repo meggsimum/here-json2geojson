@@ -2,9 +2,9 @@
   "name": "here-json2geojson",
   "version": "0.1.0-SNAPSHOT",
   "description": "JavaScript library to covert geo-features encoded in 'HERE JSON' to GeoJSON",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "pretest": "eslint src & npm run test-bundle",
+    "pretest": "eslint ../src & npm run test-bundle",
     "test": "mocha test/test-bundle.js",
     "test-bundle": "browserify test/test.js -g [ babelify --plugins [ transform-es2015-modules-commonjs ] ] > test/test-bundle.js"
   },
