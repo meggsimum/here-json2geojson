@@ -1,7 +1,7 @@
 {
-  "name": "heregeom2geojson",
+  "name": "here-json2geojson",
   "version": "0.1.0-SNAPSHOT",
-  "description": "JavaScript library to covert HERE geometries to GeoJSON",
+  "description": "JavaScript library to covert geo-features encoded in 'HERE JSON' to GeoJSON",
   "main": "index.js",
   "scripts": {
     "pretest": "eslint src & npm run test-bundle",
@@ -10,20 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrismayer/heregeom2geojson.git"
+    "url": "git+https://github.com/chrismayer/here-json2geojson.git"
   },
   "keywords": [
     "HERE",
+    "JSON",
     "geometry",
+    "features",
     "GeoJSON",
     "converter"
   ],
   "author": "Christian Mayer <chris@meggsimum.de> (https://meggsimum.de)",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/chrismayer/heregeom2geojson/issues"
+    "url": "https://github.com/chrismayer/here-json2geojson/issues"
   },
-  "homepage": "https://github.com/chrismayer/heregeom2geojson#readme",
+  "homepage": "https://github.com/chrismayer/here-json2geojson#readme",
   "dependencies": {
   },
   "devDependencies": {
