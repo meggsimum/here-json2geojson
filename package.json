@@ -6,7 +6,8 @@
   "scripts": {
     "pretest": "eslint ../src & npm run test-bundle",
     "test": "mocha test/test-bundle.js",
-    "test-bundle": "browserify test/test.js -g [ babelify --plugins [ transform-es2015-modules-commonjs ] ] > test/test-bundle.js"
+    "test-bundle": "browserify test/test.js -g [ babelify --plugins [ transform-es2015-modules-commonjs ] ] > test/test-bundle.js",
+    "posttest": "rm test/test-bundle.js"
   },
   "repository": {
     "type": "git",
