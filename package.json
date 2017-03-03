@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dist": "node ./node_modules/mkdirp/bin/cmd.js dist && browserify -g [ babelify --plugins [  transform-es2015-modules-commonjs ] ] -p [ standalonify --name hj2gj --deps [ null ] ] -g [ bubleify ] src/index.js > dist/hj2gj.js",
+    "doc": "documentation readme -s API src/index.js --shallow",
     "pretest": "eslint ../src & npm run test-bundle",
     "test": "mocha test/test-bundle.js",
     "test-bundle": "browserify test/test.js -g [ babelify --plugins [ transform-es2015-modules-commonjs ] ] > test/test-bundle.js",
@@ -35,6 +36,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
     "browserify": "^14.1.0",
     "bubleify": "^0.7.0",
+    "documentation": "4.0.0-beta.18",
     "eslint": "^3.15.0",
     "expect": "^1.20.2",
     "mkdirp": "^0.5.1",
