@@ -9,8 +9,8 @@ import {createCoords, createPoint, createLineString, createPolygon, createFeatur
 /**
  * Reads isolines-response object delivered by the HERE API and converts it
  * to a GeoJSON FeatureCollection.
- * @param  {Object} hereIsoline HERE JSON for isolines
- * @return {Object}             GeoJSON FeatureCollection
+ * @param  {Object} hereIsolineResponse HERE JSON for isolines
+ * @return {Object}                     GeoJSON FeatureCollection
  */
 function readIsolines(hereIsolineResponse) {
   var isolines = hereIsolineResponse.response.isoline;
@@ -33,8 +33,8 @@ function readIsolines(hereIsolineResponse) {
 /**
  * Reads route-response object delivered by the HERE API and converts it
  * to a GeoJSON FeatureCollection holding the route legs as line features.
- * @param  {Object} hereIsoline HERE JSON for a route
- * @return {Object}             GeoJSON FeatureCollection
+ * @param  {Object} hereRouteResponse HERE JSON for a route
+ * @return {Object}                   GeoJSON FeatureCollection
  */
 function readRoute(hereRouteResponse) {
   var route = hereRouteResponse.response.route[0];
@@ -81,14 +81,14 @@ function readRouteLeg(routeLeg) {
 /**
  * Reads HERE traffic incidents and transforms them to a GeoJSON
  * FeatureCollection containing point features.
- * @param  {Object} trafficIncidents HERE JSON for a route leg
- * @param  {Boolean} addEndPoints    Should possible end points of incident be added to the FeatureCollection
- * @return {Object}                  GeoJSON FeatureCollection
+ * @param  {Object} trafficIncidentsResponse HERE JSON for traffic incidents
+ * @param  {Boolean} addEndPoints            Should possible end points of incident be added to the FeatureCollection
+ * @return {Object}                          GeoJSON FeatureCollection
  */
-function readTrafficIncidents(trafficIncidents, addEndPoints) {
+function readTrafficIncidents(trafficIncidentsResponse, addEndPoints) {
     var tiPointFeatures = [];
 
-    trafficIncidents.TRAFFICITEMS.TRAFFICITEM.forEach(function(trItem){
+    trafficIncidentsResponse.TRAFFICITEMS.TRAFFICITEM.forEach(function(trItem){
       var originGeo = trItem.LOCATION.GEOLOC.ORIGIN;
 
       // get clone of the traffic item
