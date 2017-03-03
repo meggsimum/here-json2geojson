@@ -2,9 +2,14 @@
 
 JavaScript library to transform HERE JSON objects to GeoJSON.
 
+At the moment only a subset of the JSON response types provided by the [HERE REST APIs](https://developer.here.com/api-explorer/rest) is supported. This will be extended from time to time.
+
+
+#### Disclaimer
+
 **This is not an official HERE product!**
 
-At the moment only a few JSON response types provided by the [HERE REST APIs](https://developer.here.com/api-explorer/rest) are supported. This will be extended from time to time.
+Be sure to respect the [HERE Service Terms](https://legal.here.com/en/terms/serviceterms/us/) when using their API.
 
 ## Usage
 
@@ -13,7 +18,7 @@ To use this library in an HTML-web-application just include the JavaScript-file 
 ```JavaScript
 import {readIsolines} from 'here-json2geojson';
 
-var hereIsolineResponse = // The response of the REST API call
+var hereIsolineResponse = // The response of the HERE REST API call
 var isolineFeatColl = readIsolines(hereIsolineResponse);
 ```
 
