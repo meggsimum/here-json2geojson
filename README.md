@@ -69,3 +69,7 @@ FeatureCollection containing point features.
 -   `addEndPoints` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Should possible end points of incident be added to the FeatureCollection
 
 Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** GeoJSON FeatureCollection
+
+## Credits
+
+The initial development of this project has been sponsored by [geomer GmbH](http://geomer.de/) from Heidelberg, Germany 
