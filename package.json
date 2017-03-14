@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrismayer/here-json2geojson.git"
+    "url": "git+https://github.com/meggsimum/here-json2geojson.git"
   },
   "keywords": [
     "HERE",
@@ -26,9 +26,9 @@
   "author": "Christian Mayer <chris@meggsimum.de> (https://meggsimum.de)",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/chrismayer/here-json2geojson/issues"
+    "url": "https://github.com/meggsimum/here-json2geojson/issues"
   },
-  "homepage": "https://github.com/chrismayer/here-json2geojson#readme",
+  "homepage": "https://github.com/meggsimum/here-json2geojson#readme",
   "dependencies": {
   },
   "devDependencies": {
