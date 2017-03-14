@@ -2,6 +2,8 @@
 
 JavaScript library to transform HERE JSON objects to GeoJSON.
 
+[![Build Status](https://travis-ci.org/meggsimum/here-json2geojson.svg?branch=master)](https://travis-ci.org/meggsimum/here-json2geojson)
+
 At the moment only a subset of the JSON response types provided by the [HERE REST APIs](https://developer.here.com/api-explorer/rest) is supported. This will be extended from time to time.
 
 #### Disclaimer
@@ -79,4 +81,4 @@ Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 ## Credits
 
-The initial development of this project has been sponsored by [geomer GmbH](http://geomer.de/) from Heidelberg, Germany 
+The initial development of this project has been sponsored by [geomer GmbH](http://geomer.de/) from Heidelberg, Germany
