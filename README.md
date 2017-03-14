@@ -4,7 +4,6 @@ JavaScript library to transform HERE JSON objects to GeoJSON.
 
 At the moment only a subset of the JSON response types provided by the [HERE REST APIs](https://developer.here.com/api-explorer/rest) is supported. This will be extended from time to time.
 
-
 #### Disclaimer
 
 **This is not an official HERE product!**
@@ -13,7 +12,7 @@ Be sure to respect the [HERE Service Terms](https://legal.here.com/en/terms/serv
 
 ## Usage
 
-To use this library in an HTML-web-application just include the JavaScript-file at ``dist/hj2gj.js`` into your HTML-page. Otherwise just import this library as module like in the snippet below:
+To use this library in an HTML-web-application just include the JavaScript-file at `dist/hj2gj.js` into your HTML-page. Otherwise just import this library as module like in the snippet below:
 
 ```JavaScript
 import {readIsolines} from 'here-json2geojson';
@@ -24,13 +23,10 @@ var isolineFeatColl = readIsolines(hereIsolineResponse);
 
 ### Build the library on your own
 
-```
-> npm install
-> npm run dist
-```
+    > npm install
+    > npm run dist
 
-Afterwards the single-file-build of the library is available under ``dist/hj2gj.js``
-
+Afterwards the single-file-build of the library is available under `dist/hj2gj.js`
 
 ## API
 
@@ -67,6 +63,17 @@ FeatureCollection containing point features.
 
 -   `trafficIncidentsResponse` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** HERE JSON for traffic incidents
 -   `addEndPoints` **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Should possible end points of incident be added to the FeatureCollection
+
+Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** GeoJSON FeatureCollection
+
+### readWeatherConditions
+
+Reads HERE traffic weather conditions and transforms them to a GeoJSON
+FeatureCollection containing point features with weather info as attributes.
+
+**Parameters**
+
+-   `weatherConditionsResponse` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** HERE JSON for weather conditions
 
 Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** GeoJSON FeatureCollection
 

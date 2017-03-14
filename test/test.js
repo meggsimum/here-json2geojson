@@ -1,6 +1,6 @@
 import should from 'should/as-function';
 import {createPoint, createLineString, createPolygon} from '../src/geojson';
-import {readIsolines, readRoute, readTrafficIncidents} from '../src/';
+import {readIsolines, readRoute, readTrafficIncidents, readWeatherConditions} from '../src/';
 
 
 describe('here-features2geojson', function() {
@@ -1817,5 +1817,80 @@ describe('readTrafficIncidents', function() {
     var trIncidents = readTrafficIncidents(hti, true);
     should(trIncidents).have.property('type', 'FeatureCollection');
     should(trIncidents).have.property('features').with.lengthOf(12);
+  });
+});
+
+describe('readWeatherConditions', function() {
+  it('reads HERE weather conditions transforms them to a GeoJSON FeatureCollection', function() {
+
+    var wcResp = {
+      "observations": {
+        "location": [
+          {
+            "observation": [
+              {
+                "daylight": "D",
+                "description": "Scattered clouds. Cool.",
+                "skyInfo": "9",
+                "skyDescription": "Scattered clouds",
+                "temperature": "9.00",
+                "temperatureDesc": "Cool",
+                "comfort": "6.96",
+                "highTemperature": "10.90",
+                "lowTemperature": "2.50",
+                "humidity": "71",
+                "dewPoint": "4.00",
+                "precipitation1H": "*",
+                "precipitation3H": "*",
+                "precipitation6H": "*",
+                "precipitation12H": "*",
+                "precipitation24H": "*",
+                "precipitationDesc": "",
+                "airInfo": "*",
+                "airDescription": "",
+                "windSpeed": "12.97",
+                "windDirection": "240",
+                "windDesc": "Southwest",
+                "windDescShort": "SW",
+                "barometerPressure": "1028.11",
+                "barometerTrend": "",
+                "visibility": "*",
+                "snowCover": "*",
+                "icon": "2",
+                "iconName": "mostly_sunny",
+                "iconLink": "https://weather.cit.api.here.com/static/weather/icon/2.png",
+                "ageMinutes": "27",
+                "activeAlerts": "0",
+                "country": "Germany",
+                "state": "Berlin",
+                "city": "Unter den Linden",
+                "latitude": 52.5178,
+                "longitude": 13.3874,
+                "distance": 7.65,
+                "elevation": 0,
+                "utcTime": "2017-03-14T13:50:00.000+01:00"
+              }
+            ],
+            "country": "Germany",
+            "state": "Berlin",
+            "city": "Unter den Linden",
+            "latitude": 52.51784,
+            "longitude": 13.38736,
+            "distance": 0.23,
+            "timezone": 1
+          }
+        ]
+      },
+      "feedCreation": "2017-03-14T13:17:51.901Z",
+      "metric": true
+    };
+    var weatherConds = readWeatherConditions(wcResp);
+    should(weatherConds).have.property('type', 'FeatureCollection');
+    should(weatherConds).have.property('features').with.lengthOf(1);
+    should(weatherConds.features[0]).have.property('geometry');
+    should(weatherConds.features[0].geometry).have.property('type', 'Point');
+    should(weatherConds.features[0].properties).have.property('skyDescription', 'Scattered clouds');
+    should(weatherConds.features[0].properties).have.property('city', 'Unter den Linden');
+    should(weatherConds.features[0].properties).have.property('temperature', '9.00');
   });
 });
