@@ -3,6 +3,8 @@
 JavaScript library to transform HERE JSON objects to GeoJSON.
 
 [![Build Status](https://travis-ci.org/meggsimum/here-json2geojson.svg?branch=master)](https://travis-ci.org/meggsimum/here-json2geojson)
+[![dependencies Status](https://david-dm.org/meggsimum/here-json2geojson/status.svg)](https://david-dm.org/meggsimum/here-json2geojson)
+[![devDependencies Status](https://david-dm.org/meggsimum/here-json2geojson/dev-status.svg)](https://david-dm.org/meggsimum/here-json2geojson?type=dev)
 
 At the moment only a subset of the JSON response types provided by the [HERE REST APIs](https://developer.here.com/api-explorer/rest) is supported. This will be extended from time to time.
 
