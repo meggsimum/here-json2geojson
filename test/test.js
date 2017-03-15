@@ -3,7 +3,7 @@ import {createPoint, createLineString, createPolygon} from '../src/geojson';
 import {readIsolines, readRoute, readTrafficIncidents, readWeatherConditions} from '../src/';
 
 
-describe('here-features2geojson', function() {
+describe('here-json2geojson', function() {
 
   describe('createPoint', function() {
     it('creates a GeoJSON Point geometry object', function() {
