@@ -1,6 +1,6 @@
 {
   "name": "here-json2geojson",
-  "version": "0.1.0-SNAPSHOT",
+  "version": "0.1.0",
   "description": "JavaScript library to covert geo-features encoded in 'HERE JSON' to GeoJSON",
   "main": "src/index.js",
   "scripts": {
