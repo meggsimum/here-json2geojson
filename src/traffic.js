@@ -1,3 +1,8 @@
+/*
+here-json2geojson - Convert HERE JSON to GeoJSON object
+Copyright 2017-present meggsimum
+License: https://github.com/meggsimum/here-json2geojson/blob/master/LICENSE
+*/
 
 import {createPoint, createFeature, createFeatureCollection} from './geojson';
 
