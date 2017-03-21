@@ -1,6 +1,8 @@
 import should from 'should/as-function';
 import {createPoint, createLineString, createPolygon} from '../src/geojson';
-import {readIsolines, readRoute, readTrafficIncidents, readWeatherConditions} from '../src/';
+import {readIsolines, readRoute} from '../src/routing.js';
+import {readTrafficIncidents} from '../src/traffic.js';
+import {readWeatherConditions} from '../src/weather.js';
 
 
 describe('here-json2geojson', function() {
