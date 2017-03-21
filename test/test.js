@@ -3,6 +3,7 @@ import {createPoint, createLineString, createPolygon} from '../src/geojson';
 import {readIsolines, readRoute} from '../src/routing.js';
 import {readTrafficIncidents} from '../src/traffic.js';
 import {readWeatherConditions} from '../src/weather.js';
+import {readPlaces} from '../src/places.js';
 
 
 describe('here-json2geojson', function() {
@@ -1822,77 +1823,104 @@ describe('readTrafficIncidents', function() {
   });
 });
 
-describe('readWeatherConditions', function() {
-  it('reads HERE weather conditions transforms them to a GeoJSON FeatureCollection', function() {
+describe('readPlaces', function() {
+  it('reads HERE places and transforms them to a GeoJSON FeatureCollection', function() {
 
-    var wcResp = {
-      "observations": {
-        "location": [
+    var placesResponse = {
+      "results": {
+        "next": "https://places.demo.api.here.com/places/v1/discover/search;context=Zmxvdy1pZD0zZTQ3NmZjNi0xMTkzLTU0ODAtODRlMS0xNzBmMDlmNmI1NzFfMTQ5MDA4MzE5MzU3Nl82ODU5XzE5NDMmb2Zmc2V0PTIwJnNpemU9MjA?at=37.7942%2C-122.407&q=restaurant&app_id=DemoAppId01082013GAL&app_code=AJKnXv84fjrb0KIHawS0Tg",
+        "items": [
           {
-            "observation": [
+            "position": [
+              48.83049,
+              8.6451
+            ],
+            "distance": 1073,
+            "title": "Sonne",
+            "averageRating": 0,
+            "category": {
+              "id": "restaurant",
+              "title": "Restaurant",
+              "href": "https://places.demo.api.here.com/places/v1/categories/places/restaurant?app_id=DemoAppId01082013GAL&app_code=AJKnXv84fjrb0KIHawS0Tg",
+              "type": "urn:nlp-types:category",
+              "system": "places"
+            },
+            "icon": "https://download.vcdn.cit.data.here.com/p/d/places2_stg/icons/categories/03.icon",
+            "vicinity": "Hauptstraße 9<br/>75331 Engelsbrand",
+            "having": [],
+            "type": "urn:nlp-types:place",
+            "href": "https://places.demo.api.here.com/places/v1/places/276u0wju-2b460176d82643eb9675bfee7d931b62;context=Zmxvdy1pZD1lZTIwM2QxMC05YWZlLTU5ZDAtOTMyMS1mOGZjMjEyYzdmZDBfMTQ5MDA4MzY1Mzk5MF8xNF8yMTY0JnJhbms9MA?app_id=DemoAppId01082013GAL&app_code=AJKnXv84fjrb0KIHawS0Tg",
+            "tags": [
               {
-                "daylight": "D",
-                "description": "Scattered clouds. Cool.",
-                "skyInfo": "9",
-                "skyDescription": "Scattered clouds",
-                "temperature": "9.00",
-                "temperatureDesc": "Cool",
-                "comfort": "6.96",
-                "highTemperature": "10.90",
-                "lowTemperature": "2.50",
-                "humidity": "71",
-                "dewPoint": "4.00",
-                "precipitation1H": "*",
-                "precipitation3H": "*",
-                "precipitation6H": "*",
-                "precipitation12H": "*",
-                "precipitation24H": "*",
-                "precipitationDesc": "",
-                "airInfo": "*",
-                "airDescription": "",
-                "windSpeed": "12.97",
-                "windDirection": "240",
-                "windDesc": "Southwest",
-                "windDescShort": "SW",
-                "barometerPressure": "1028.11",
-                "barometerTrend": "",
-                "visibility": "*",
-                "snowCover": "*",
-                "icon": "2",
-                "iconName": "mostly_sunny",
-                "iconLink": "https://weather.cit.api.here.com/static/weather/icon/2.png",
-                "ageMinutes": "27",
-                "activeAlerts": "0",
-                "country": "Germany",
-                "state": "Berlin",
-                "city": "Unter den Linden",
-                "latitude": 52.5178,
-                "longitude": 13.3874,
-                "distance": 7.65,
-                "elevation": 0,
-                "utcTime": "2017-03-14T13:50:00.000+01:00"
+                "id": "german",
+                "title": "German",
+                "group": "cuisine"
               }
             ],
-            "country": "Germany",
-            "state": "Berlin",
-            "city": "Unter den Linden",
-            "latitude": 52.51784,
-            "longitude": 13.38736,
-            "distance": 0.23,
-            "timezone": 1
+            "id": "276u0wju-2b460176d82643eb9675bfee7d931b62"
+          },
+          {
+            "position": [
+              48.71582,
+              8.73868
+            ],
+            "distance": 14043,
+            "title": "Eiscafe Adria",
+            "averageRating": 0,
+            "category": {
+              "id": "restaurant",
+              "title": "Restaurant",
+              "href": "https://places.demo.api.here.com/places/v1/categories/places/restaurant?app_id=DemoAppId01082013GAL&app_code=AJKnXv84fjrb0KIHawS0Tg",
+              "type": "urn:nlp-types:category",
+              "system": "places"
+            },
+            "icon": "https://download.vcdn.cit.data.here.com/p/d/places2_stg/icons/categories/03.icon",
+            "vicinity": "Lederstraße 27<br/>75365 Calw",
+            "having": [],
+            "type": "urn:nlp-types:place",
+            "href": "https://places.demo.api.here.com/places/v1/places/276u0wjn-04be6a4f3b1046fd92b3ab22f4cc3324;context=Zmxvdy1pZD1lZTIwM2QxMC05YWZlLTU5ZDAtOTMyMS1mOGZjMjEyYzdmZDBfMTQ5MDA4MzY1Mzk5MF8xNF8yMTY0JnJhbms9MQ?app_id=DemoAppId01082013GAL&app_code=AJKnXv84fjrb0KIHawS0Tg",
+            "tags": [
+              {
+                "id": "ice-cream",
+                "title": "Ice cream",
+                "group": "cuisine"
+              }
+            ],
+            "id": "276u0wjn-04be6a4f3b1046fd92b3ab22f4cc3324"
           }
         ]
       },
-      "feedCreation": "2017-03-14T13:17:51.901Z",
-      "metric": true
+      "search": {
+        "context": {
+          "location": {
+            "position": [
+              48.8226,
+              8.6367
+            ],
+            "address": {
+              "text": "75331 Engelsbrand<br/>Germany",
+              "postalCode": "75331",
+              "city": "Engelsbrand",
+              "county": "Enzkreis",
+              "stateCode": "Baden-Wurttemberg",
+              "country": "Germany",
+              "countryCode": "DEU"
+            }
+          },
+          "type": "urn:nlp-types:place",
+          "href": "https://places.demo.api.here.com/places/v1/places/loc-dmVyc2lvbj0xO3RpdGxlPUVuZ2Vsc2JyYW5kO2xhdD00OC44MjI2O2xvbj04LjYzNjc7Y2l0eT1FbmdlbHNicmFuZDtwb3N0YWxDb2RlPTc1MzMxO2NvdW50cnk9REVVO3N0YXRlQ29kZT1CYWRlbi1XdXJ0dGVtYmVyZztjb3VudHk9RW56a3JlaXM7Y2F0ZWdvcnlJZD1jaXR5LXRvd24tdmlsbGFnZTtzb3VyY2VTeXN0ZW09aW50ZXJuYWw;context=c2VhcmNoQ29udGV4dD0x?app_id=DemoAppId01082013GAL&app_code=AJKnXv84fjrb0KIHawS0Tg"
+        }
+      }
     };
-    var weatherConds = readWeatherConditions(wcResp);
-    should(weatherConds).have.property('type', 'FeatureCollection');
-    should(weatherConds).have.property('features').with.lengthOf(1);
-    should(weatherConds.features[0]).have.property('geometry');
-    should(weatherConds.features[0].geometry).have.property('type', 'Point');
-    should(weatherConds.features[0].properties).have.property('skyDescription', 'Scattered clouds');
-    should(weatherConds.features[0].properties).have.property('city', 'Unter den Linden');
-    should(weatherConds.features[0].properties).have.property('temperature', '9.00');
+
+    var places = readPlaces(placesResponse);
+    should(places).have.property('type', 'FeatureCollection');
+    should(places).have.property('features').with.lengthOf(2);
+    should(places.features[0]).have.property('geometry');
+    should(places.features[0].geometry).have.property('type', 'Point');
+    should(places.features[0].properties).have.property('title', 'Sonne');
+    should(places.features[0].properties).have.property('vicinity', 'Hauptstraße 9<br/>75331 Engelsbrand');
+    should(places.features[0].properties.category).have.property('title', 'Restaurant');
+    should(places.features[0].properties.tags[0]).have.property('title', 'German');
   });
 });

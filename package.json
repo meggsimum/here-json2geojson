@@ -4,7 +4,7 @@
   "description": "JavaScript library to covert geo-features encoded in 'HERE JSON' to GeoJSON",
   "scripts": {
     "dist": "node ./node_modules/mkdirp/bin/cmd.js dist && browserify -g [ babelify --plugins [  transform-es2015-modules-commonjs ] ] -p [ standalonify --name hj2gj --deps [ null ] ] -g [ bubleify ] src/** > dist/hj2gj.js",
-    "doc": "node ./node_modules/documentation/bin/documentation.js readme -s API src/{routing.js,traffic.js,weather.js} --shallow",
+    "doc": "node ./node_modules/documentation/bin/documentation.js readme -s API src/{places.js,routing.js,traffic.js,weather.js} --shallow",
     "pretest": "eslint ../src & npm run test-bundle",
     "test": "mocha test/test-bundle.js",
     "test-bundle": "browserify test/test.js -g [ babelify --plugins [ transform-es2015-modules-commonjs ] ] > test/test-bundle.js",
