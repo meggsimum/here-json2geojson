@@ -32,14 +32,14 @@
   },
   "devDependencies": {
     "babelify": "^7.3.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
-    "browserify": "^14.1.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "browserify": "^14.5.0",
     "bubleify": "^0.7.0",
-    "documentation": "4.0.0-beta.18",
-    "eslint": "^3.17.1",
+    "documentation": "4.0.0",
+    "eslint": "^3.19.0",
     "expect": "^1.20.2",
     "mkdirp": "^0.5.1",
-    "mocha": "^3.2.0",
+    "mocha": "^3.5.3",
     "should": "^11.2.1",
     "standalonify": "^0.1.3"
   }
